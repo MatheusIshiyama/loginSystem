@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 try {
-    const config = require("./config.json");
+    const config = require('../config.json');
     mongoKey = config.mongoKey;
 } catch {
     mongoKey = process.env.MONGO_KEY;
