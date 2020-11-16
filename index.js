@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send('Ok');
-})
+app.use(bodyParser.json());
+require('./controllers/auth')(app);
 
 app.listen(PORT, () => {
-    console.log(`Conectado na porta ${PORT}`);
-})
+    console.log(`[Server] Conectado na porta ${PORT}`);
+});
